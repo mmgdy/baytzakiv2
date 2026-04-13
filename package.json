@@ -1,13 +1,27 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  images: {
-    domains: [
-      'sonoff.tech','static.tp-link.com','ezviz.com',
-      'images.unsplash.com','picsum.photos','placehold.co',
-      'asg.com.eg','aura.eg','www.amazon.eg',
-    ],
-    unoptimized: true,
+{
+  "name": "baytzaki-smart-home",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  experimental: { serverActions: true },
+  "dependencies": {
+    "openai": "^4.47.1",
+    "lucide-react": "^0.383.0",
+    "next": "14.2.3",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
+  }
 }
-module.exports = nextConfig

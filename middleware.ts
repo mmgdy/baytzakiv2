@@ -1,13 +1,11 @@
-# Baytzaki Smart Home — Environment Variables
-# Copy this to .env.local and fill in your keys
+import { NextRequest, NextResponse } from "next/server";
 
-# AI Keys (Claude fallback chain)
-ANTHROPIC_API_KEY=sk-ant-your-key-here
-GEMINI_API_KEY=AIza-your-key-here
-GROQ_API_KEY=gsk_your-key-here
+export function middleware(req: NextRequest) {
+  const res = NextResponse.next();
+  res.headers.set("x-pathname", req.nextUrl.pathname);
+  return res;
+}
 
-# Admin password for /admin page
-NEXT_PUBLIC_ADMIN_PASSWORD=baytzaki2025
-
-# Optional: Analytics
-# NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+export const config = {
+  matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
+};

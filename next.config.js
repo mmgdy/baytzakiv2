@@ -1,11 +1,13 @@
-import { NextRequest, NextResponse } from "next/server";
-
-export function middleware(req: NextRequest) {
-  const res = NextResponse.next();
-  res.headers.set("x-pathname", req.nextUrl.pathname);
-  return res;
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    domains: [
+      'sonoff.tech','static.tp-link.com','ezviz.com',
+      'images.unsplash.com','picsum.photos','placehold.co',
+      'asg.com.eg','aura.eg','www.amazon.eg',
+    ],
+    unoptimized: true,
+  },
+  experimental: { serverActions: true },
 }
-
-export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
-};
+module.exports = nextConfig
